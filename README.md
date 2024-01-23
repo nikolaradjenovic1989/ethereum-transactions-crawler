@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# The Ethereum Blockchain Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application will allow a user to view transaction data from the Ethereum blockchain associated with a specific wallet address **W** that the user inputs, starting with block **B**. The application will get information on:
 
-Currently, two official plugins are available:
+- wallets (addresses)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- amounts of ETH associated with transactions made to and from the given wallet **W**
 
-## Expanding the ESLint configuration
+- show them in a table
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The application will collect and display **ALL transaction data** starting from the given block **B**.
 
-- Configure the top-level `parserOptions` property like this:
+## Example
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+If a user requests to view transactions associated with the address **0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f** from block **9000000** to the current block, application will crawl and visualize all transaction data (addresses that have sent and received tokens from the address **0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f**, and how much **ETH** was used for a given transaction) in that period of time.
+
+## Project setup
+
+```
+pnpm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Compiles and hot-reloads for development
+
+```
+pnpm run dev
+```
