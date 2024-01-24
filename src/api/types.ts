@@ -26,3 +26,9 @@ export type TransactionsResponse = {
   message: string
   result: TransactionInfo[]
 }
+
+export type BlockAndBalanceResponse = {
+  status: string
+  message: string
+  result: string
+}

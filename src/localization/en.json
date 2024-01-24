@@ -1,5 +1,6 @@
 {
   "address": "Address",
+  "balance": "Balance",
   "block": "Block",
   "goToPage": "Go to Page:",
   "filterPlaceholder": "Filter all columns...",
@@ -7,11 +8,13 @@
   "noTransactions": "No Transactions Found.",
   "pageInfo": "Page <0>{{pageNumber}} of {{pageCount}}</0>",
   "show": "Show {{pageSize}}",
+  "showBalance": "Show Balance",
   "showTransactions": "Show Transactions",
   "startingBlock": "Starting Block Number",
   "time": "Time",
   "to": "To",
   "title": "The Ethereum Blockchain Explorer",
+  "transactions": "Transactions",
   "txnHash": "Txn Hash",
   "validation": {
     "addressErrorMessage": "Please enter valid Ethereum address",

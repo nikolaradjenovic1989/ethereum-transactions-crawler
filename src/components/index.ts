@@ -1,9 +1,12 @@
 export { default as Pagination } from './Table/Pagination'
 export { default as TransactionTable } from './Table/TransactionTable'
 export { default as TransactionForm } from './Form/TransactionForm'
+export { default as BalanceForm } from './Form/BalanceForm'
 export { default as InputField } from './Form/InputField'
 export { default as LoadingSpinner } from './LoadingSpinner'
-export { default as Title } from './Title'
+export { default as BalancePage } from './Pages/BalancePage'
+export { default as TransactionsPage } from './Pages/TransactionsPage'
+export { default as Header } from './Header'
 
 export * from './Icons'
 export * from './Form/TransactionForm'

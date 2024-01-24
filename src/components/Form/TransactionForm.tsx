@@ -1,20 +1,20 @@
 import { FormEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import cn from 'classnames'
 import InputField from './InputField'
+import Button from './Button'
 import { useValidateTxnForm } from '../../utils'
 
-export type TransactionFormData = {
+export type TransactionQueryData = {
   address: string
   block: string
 }
 
 type TransactionFormProps = {
   isLoading: boolean
-  setFormData: React.Dispatch<React.SetStateAction<TransactionFormData>>
+  setQueryData: React.Dispatch<React.SetStateAction<TransactionQueryData>>
 }
 
-const TransactionForm = ({ isLoading, setFormData }: TransactionFormProps) => {
+const TransactionForm = ({ isLoading, setQueryData }: TransactionFormProps) => {
   const { t } = useTranslation()
   const [address, setAddress] = useState('')
   const [block, setBlock] = useState('')
@@ -23,19 +23,15 @@ const TransactionForm = ({ isLoading, setFormData }: TransactionFormProps) => {
 
   const inputClass =
     'p-2 pl-0 bg-transparent outline-none border-b-2 w-1/3 border-indigo-500'
-  const buttonClass = cn('bg-indigo-600 font-bold py-2 px-4 rounded', {
-    'opacity-50 cursor-not-allowed': disableButton,
-    'hover:bg-indigo-700': !disableButton,
-  })
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setFormData({ address, block })
+    setQueryData({ address, block })
   }
 
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-2">
         <InputField
           center
           className={inputClass}
@@ -60,11 +56,7 @@ const TransactionForm = ({ isLoading, setFormData }: TransactionFormProps) => {
         />
         <div className="w-1/3 h-6 text-red-500">{blockError}</div>
       </div>
-      <div className="flex justify-center mt-4">
-        <button disabled={disableButton} className={buttonClass} type="submit">
-          {t('showTransactions')}
-        </button>
-      </div>
+      <Button disabled={disableButton} value={t('showTransactions')} />
     </form>
   )
 }
