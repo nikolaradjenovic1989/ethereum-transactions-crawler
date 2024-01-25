@@ -16,6 +16,11 @@ If a user requests to view transactions associated with the address **0xaa7a9ca8
 
 ## Project setup
 
+I would recommend usage of the same or higher versions of `node` and `pnpm` for running this project:
+
+- node `20.10.0`
+- pnpm `8.12.1`
+
 ```
 pnpm install
 ```
