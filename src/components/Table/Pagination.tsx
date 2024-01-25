@@ -68,9 +68,7 @@ const Pagination = ({
 
       <select
         value={pageSize}
-        onChange={(e) => {
-          setPageSize(Number(e.target.value))
-        }}
+        onChange={(e) => setPageSize(Number(e.target.value))}
         className="p-2 bg-transparent"
       >
         {PAGINATION_DEFAULT.map((pageSize) => (
